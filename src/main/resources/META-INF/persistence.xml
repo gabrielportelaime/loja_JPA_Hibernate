@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="2.2"
+    xmlns="http://xmlns.jcp.org/xml/ns/persistence"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_2.xsd">
+	<persistence-unit name="loja" transaction-type="RESOURCE_LOCAL">
+		<!-- Caso não esteja usando Hibernate deve ser adicionado a classe aqui também -->
+		<properties>
+			<property name="javax.persistence.jdbc.driver" value="org.h2.Driver"/>
+			<property name="javax.persistence.jdbc.url" value="jdbc:h2:mem:loja"/> 
+			<property name="javax.persistence.jdbc.user" value="sa"/> 
+			<property name="javax.persistence.jdbc.password" value=""/>
+			<property name="hibernate.dialect" value="org.hibernate.dialect.H2Dialect"/>  
+			<property name="hibernate.show_sql" value="true"/>
+			<property name="hibernate.hbm2ddl.auto" value="create"/>
+			<!-- create (Ao criar um EntityManagerFactory, apaga tudo e cria do zero as tabelas, mas ao fechar a aplicação não apaga as tabelas) -->
+			<!-- create-drop (Mesma coisa do create, mas dropa tudo ao final da aplicação) -->
+			<!-- update (Apenas atualiza, mas não apaga a tabela e nem colunas) -->
+			<!-- validate (Valida se tá tudo ok no banco e gera o log) -->
+		</properties>	
+	</persistence-unit>
+</persistence>
