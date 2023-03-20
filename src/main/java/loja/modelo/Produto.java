@@ -4,11 +4,10 @@ import java.math.BigDecimal;
 import java.time.LocalDate;
 
 import javax.persistence.Entity;
-import javax.persistence.EnumType;
-import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -27,11 +26,17 @@ public class Produto {
 	private String descricao;
 	private BigDecimal preco;
 	private LocalDate dataCadastro = LocalDate.now();
-	@Enumerated(EnumType.STRING)
 	// Deve ser colocado para o JPA entender que o enum deve ser mapeado por String
 	// e não por ints, isso bagunçaria o caso alguém trocasse a ordem das constantes
 	// dentro do enum
+
+	@ManyToOne
+	// ManyToOne, OneToMany, ManyToMany
 	private Categoria categoria;
+
+	public Produto() {
+
+	}
 
 	public Produto(String nome, String descricao, BigDecimal preco, Categoria categoria) {
 		this.nome = nome;

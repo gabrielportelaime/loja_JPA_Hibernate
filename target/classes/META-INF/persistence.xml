@@ -12,6 +12,8 @@
 			<property name="javax.persistence.jdbc.password" value=""/>
 			<property name="hibernate.dialect" value="org.hibernate.dialect.H2Dialect"/>  
 			<property name="hibernate.show_sql" value="true"/>
+			<property name="hibernate.format_sql" value="true"/>
+			<!-- format_sql - serve para formatar a linha do sql feita pelo JPA/Hibernate -->
 			<property name="hibernate.hbm2ddl.auto" value="create"/>
 			<!-- create (Ao criar um EntityManagerFactory, apaga tudo e cria do zero as tabelas, mas ao fechar a aplicação não apaga as tabelas) -->
 			<!-- create-drop (Mesma coisa do create, mas dropa tudo ao final da aplicação) -->
